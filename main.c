@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
-#include <mem.h>
+
 
 typedef struct {
     char maSinhVien[10];
