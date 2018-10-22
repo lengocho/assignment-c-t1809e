@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <mem.h>
 
 typedef struct {
     char maSinhVien[10];
     char ten[10];
     char soDienThoai[10];
-} sinhVien;
+} Sinhvien;
+
+Sinhvien mangSinhVien[10];
 
 void removeStdChar(char array[]) {
     if (strchr(array, '\n') == NULL) {
@@ -24,7 +27,7 @@ void taoMenu() {
     printf("Nhap lua chon cua ban\n");
 }
 
-void themMoiSinhVien(sinhVien mangSinhVien[], int i) {
+void themMoiSinhVien(Sinhvien mangSinhVien[], int i) {
     do {
         printf("Nhap ma sinh vien:\n");
         fgets(mangSinhVien[i].maSinhVien, sizeof(mangSinhVien[i].maSinhVien) * sizeof(char), stdin);
@@ -44,33 +47,40 @@ void themMoiSinhVien(sinhVien mangSinhVien[], int i) {
     mangSinhVien[i].soDienThoai[strlen(mangSinhVien[i].soDienThoai) - 1] = ' ';
 }
 
-void hienThiDanhSachSinhVien(sinhVien mangSinhVien[], int i) {
+void hienThiDanhSachSinhVien(Sinhvien mangSinhVien[], int i) {
     printf("\n%-20s| %-20s| %20s\n", "Ma Sinh Vien", "Ten", "So Dien Thoai");
     for (int j = 0; j < i; j++) {
         printf("\n%-20s| %-20s| %20s\n", mangSinhVien[j].maSinhVien, mangSinhVien[j].ten, mangSinhVien[j].soDienThoai);
     }
 }
 
-void luuThongTin(FILE *fp, sinhVien mangSinhVien[], int i) {
-    fprintf(fp, "\n%-20s|%-20s|%-20s\n", "Ma Sinh Vien", "Ten", "So Dien Thoai");
-    for (int j = 0; j < i; j++) {
-        fprintf(fp, "\n%-20s|%-20s|%-20s\n", mangSinhVien[j].maSinhVien, mangSinhVien[j].ten,
-                mangSinhVien[j].soDienThoai);
+void luuThongTin(Sinhvien mangSinhVien[], int i) {
+    FILE *fp;
+    fp = fopen("danhsachsinhvien.txt", "w");
+    if (fp != NULL) {
+        fprintf(fp, "\n%-20s|%-20s|%-20s\n", "Ma Sinh Vien", "Ten", "So Dien Thoai");
+        for (int j = 0; j < i; j++) {
+            fprintf(fp, "\n%-20s|%-20s|%-20s\n", mangSinhVien[j].maSinhVien, mangSinhVien[j].ten,
+                    mangSinhVien[j].soDienThoai);
+        }
+        fclose(fp);
     }
 }
 
-void docDanhSach(FILE *fp, char array[]) {
+void docDanhSach(char array[]) {
+    FILE *fp;
+    fp = fopen("danhsachsinhvien.txt", "r");
     while (fgets(array, 255, fp) != NULL) {
         printf("%s", array);
     }
+    fclose(fp);
 }
+
+int soLuong = 0;
 
 int main() {
     int luachon;
-    int soLuong = 0;
-    sinhVien mangSinhVien[10];
     char danhsach[255];
-    FILE *fp;
     while (1) {
         taoMenu();
         scanf("%d", &luachon);
@@ -89,24 +99,17 @@ int main() {
                 hienThiDanhSachSinhVien(mangSinhVien, soLuong);
                 break;
             case 3:
-                fp = fopen("danhsachsinhvien.txt", "w");
-                if (fp != NULL) {
-                    luuThongTin(fp, mangSinhVien, soLuong);
-                    fclose(fp);
-                }
+                luuThongTin(mangSinhVien, soLuong);
                 break;
             case 4:
-                fp = fopen("danhsachsinhvien.txt", "r");
-                docDanhSach(fp, danhsach);
-                fclose(fp);
+                docDanhSach(danhsach);
                 break;
             case 5:
                 return 0;
-                break;
             default:
                 printf("Thong tin khong hop le\n");
                 break;
         }
     }
-    return 0;
+
 }

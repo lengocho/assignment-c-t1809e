@@ -1,8 +1,6 @@
 
 Ma Sinh Vien        |Ten                 |So Dien Thoai       
 
-12345               |abc                 |123                 
+12345               |abc                 |213131              
 
-12321               |abcd                |123455              
-
-15432               |abfew               |1231231             
+12412               |abgn                |54353453            

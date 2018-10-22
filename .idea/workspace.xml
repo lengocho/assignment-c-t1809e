@@ -24,7 +24,7 @@
     <session id="2026500248">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
@@ -69,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="1649">
+              <caret line="97" column="19" lean-forward="true" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -79,6 +79,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -95,10 +98,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="335" />
-    <option name="width" value="1120" />
-    <option name="height" value="800" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1160" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -125,7 +129,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../struct" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/assignment-c" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -171,12 +175,12 @@
       <workItem from="1539774481218" duration="11500000" />
       <workItem from="1539877040763" duration="4839000" />
       <workItem from="1539947194159" duration="3445000" />
-      <workItem from="1540054728583" duration="6460000" />
+      <workItem from="1540054728583" duration="7265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26244000" />
+    <option name="totallyTimeSpent" value="27049000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -241,8 +245,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="1649">
+          <caret line="97" column="19" lean-forward="true" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
